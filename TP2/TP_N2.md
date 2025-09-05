@@ -36,16 +36,9 @@ Además, se utilizan filtros de “drug-likeness”, como las reglas de Lipinski
 
 ## 2. Realizar la predicción de propiedades fisicoquímicas de las moléulas obtenidas en el punto 1.a, mediante el uso de la herramienta SwissADME (http://www.swissadme.ch). Utilizando los SMILES obtenidos en el punto anterior, obtener de ambos fármacos:
 
-    | Peso Molecular | LogP | H-bond acceptors | H-bond donors | TPSA | Rotatable bonds |
-    |----------------|------|------------------|---------------|------|-----------------|
-    | 180.16 | 1.28 | 4 | 1 | 63.60 | 3 |
-    | F2C1 | F2C2 | F2C3 | F2C4 | F2C5 | F2C6 |
-    | F3C1 | F3C2 | F3C3 | F3C4 | F3C5 | F3C6 |
-    | F4C1 | F4C2 | F4C3 | F4C4 | F4C5 | F4C6 |
-
     a. Peso molecular
 
-    b. LogP (índice de lipofilicidad)
+    b. LogP (índice de lipofilicidad) --> Utilizo el promedio de los cinco, es decir, Consensus LogP
 
     c. H-bond acceptors
 
@@ -54,6 +47,15 @@ Además, se utilizan filtros de “drug-likeness”, como las reglas de Lipinski
     e. TPSA (Superficie polar)
 
     f. Rotatable bonds
+
+    |  Compuesto  | Peso Molecular | LogP | H-bond acceptors | H-bond donors | TPSA  | Rotatable bonds |
+    |:-----------:|:--------------:|:----:|:----------------:|:-------------:|:-----:|:---------------:|
+    |   Aspirin   |     180.16     | 1.28 |        4         |       1       | 63.60 |        3        |
+    | Paracetamol |     151.16     | 0.93 |        2         |       2       | 49.33 |        2        |
+    |  Caffeine   |     194.19     | 0.08 |        3         |       0       | 61.82 |        0        |
+   
+
+
 
 3. Identificar subestructuras indeseables de los compuestos del punto 1.ay 1.b usando la la siguiente módulo de python creado para tal fin siguiendo el tutorial:
 
