@@ -36,11 +36,11 @@ Además, se utilizan filtros de “drug-likeness”, como las reglas de Lipinski
 
  2. Realizar la predicción de propiedades fisicoquímicas de las moléulas obtenidas en el punto 1.a, mediante el uso de la herramienta SwissADME (http://www.swissadme.ch). Utilizando los SMILES obtenidos en el punto anterior, obtener de ambos fármacos:
 
-    a. Peso molecular
+    a. Peso molecular --> g/mol
 
     b. LogP (índice de lipofilicidad) --> Utilizo el promedio de los cinco, es decir, Consensus LogP
 
-    c. H-bond acceptors
+    c. H-bond acceptors 
 
     d. H-bond donors
 
