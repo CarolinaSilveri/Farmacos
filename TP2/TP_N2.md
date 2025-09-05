@@ -9,7 +9,7 @@ En el diseño de fármacos, una de las principales causas de fracaso en fases cl
 Además, se utilizan filtros de “drug-likeness”, como las reglas de Lipinski y Veber, junto con los filtros de PAINS, para descartar compuestos con baja probabilidad de éxito o con estructuras problemáticas.
 
 ### CONSIGNAS PRÁCTICOS
-## 1. Selección de compuestos:
+ 1. Selección de compuestos:
     a. Ingresar a PubChem (https://pubchem.ncbi.nlm.nih.gov). 
     Utilizar la barra de búsqueda, para encontrar información de los siguientes compuesto: aspirin, paracetamol y caffeine. Obtener el “Canonical SMILES” del compuesto para los pasos anteriores
 
@@ -34,7 +34,7 @@ Además, se utilizan filtros de “drug-likeness”, como las reglas de Lipinski
 
 
 
-## 2. Realizar la predicción de propiedades fisicoquímicas de las moléulas obtenidas en el punto 1.a, mediante el uso de la herramienta SwissADME (http://www.swissadme.ch). Utilizando los SMILES obtenidos en el punto anterior, obtener de ambos fármacos:
+ 2. Realizar la predicción de propiedades fisicoquímicas de las moléulas obtenidas en el punto 1.a, mediante el uso de la herramienta SwissADME (http://www.swissadme.ch). Utilizando los SMILES obtenidos en el punto anterior, obtener de ambos fármacos:
 
     a. Peso molecular
 
