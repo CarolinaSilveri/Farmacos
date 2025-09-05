@@ -59,17 +59,10 @@ Además, se utilizan filtros de “drug-likeness”, como las reglas de Lipinski
 
 3. Identificar subestructuras indeseables de los compuestos del punto 1.ay 1.b usando la la siguiente módulo de python creado para tal fin siguiendo el tutorial:
 
-```python
-$ pip install rdkit-pypi molvs requests pandas numpy matplotlib seaborn
-$ pip install deepchem 
-$ python
-Python 3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> from admet_module import analisis_completo
->>> mis_moleculas = {'molecula': 'COc1ccccc1C=O'}
->>> resultados = analisis_completo(mis_moleculas)
->>> print(resultados.keys())
->>> print(resultados['propiedades'])
+          Name                        SMILES       MW    LogP  HBA  HBD   TPSA  RotatableBonds  Lipinski_Violations
+0      Aspirin      CC(=O)OC1=CC=CC=C1C(=O)O  180.159  1.3101    3    1  63.60               2                    0
+1  Paracetamol         CC(=O)NC1=CC=C(C=C1)O  151.165  1.3506    2    2  49.33               1                    0
+2     Caffeine  CN1C=NC2=C1C(=O)N(C(=O)N2C)C  194.194 -1.0293    6    0  61.82               0    
 ```
 
 4. Realizar la predicción de toxicidad in silico utilizando ProTox-II (https://tox-new.charite.de/protox_II/). Utilizando los SMILES de moléculas del punto 1.a y 1.b, obtener: 
