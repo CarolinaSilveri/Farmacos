@@ -59,10 +59,15 @@ Además, se utilizan filtros de “drug-likeness”, como las reglas de Lipinski
 
 3. Identificar subestructuras indeseables de los compuestos del punto 1.ay 1.b usando la la siguiente módulo de python creado para tal fin siguiendo el tutorial:
 
-          Name                        SMILES       MW    LogP  HBA  HBD   TPSA  RotatableBonds  Lipinski_Violations
-0      Aspirin      CC(=O)OC1=CC=CC=C1C(=O)O  180.159  1.3101    3    1  63.60               2                    0
-1  Paracetamol         CC(=O)NC1=CC=C(C=C1)O  151.165  1.3506    2    2  49.33               1                    0
-2     Caffeine  CN1C=NC2=C1C(=O)N(C(=O)N2C)C  194.194 -1.0293    6    0  61.82               0    
+           Name                                             SMILES       MW     LogP  HBA  HBD    TPSA  RotatableBonds  Lipinski_Violations
+0       Aspirin                           CC(=O)OC1=CC=CC=C1C(=O)O  180.159  1.31010    3    1   63.60               2                    0
+1   Paracetamol                              CC(=O)NC1=CC=C(C=C1)O  151.165  1.35060    2    2   49.33               1                    0
+2      Caffeine                       CN1C=NC2=C1C(=O)N(C(=O)N2C)C  194.194 -1.02930    6    0   61.82               0                    0
+3   Doxorubicin  C[C@H]1[C@H]([C@H](C[C@@H](O1)O[C@H]2C[C@@](CC...  543.525  0.00130   12    6  206.07               5                    3
+4    Paclitaxel  CC1=C2[C@H](C(=O)[C@@]3([C@H](C[C@@H]4[C@]([C@...  853.918  3.73570   14    4  221.29              10                    2
+5   Vincristine  CC[C@@]1(C[C@@H]2C[C@@](C3=C(CCN(C2)C1)C4=CC=C...  824.972  3.51750   12    3  171.17               8                    2
+6     Irofulven       CC1=C(C2=C(C3(CC3)[C@@](C(=O)C2=C1)(C)O)C)CO  246.306  1.66560    3    2   57.53               1                    0
+7  Trabectedina   CC1=CC2=C([C@@H]3[C@@H]4[C@H]5C6=C(C(=C7C(=C6...  761.850  3.41324   15    4  168.72               3                    2
 ```
 
 4. Realizar la predicción de toxicidad in silico utilizando ProTox-II (https://tox-new.charite.de/protox_II/). Utilizando los SMILES de moléculas del punto 1.a y 1.b, obtener: 
@@ -71,6 +76,29 @@ Además, se utilizan filtros de “drug-likeness”, como las reglas de Lipinski
 
     b. Riesgo de hepatotoxicidad, mutagenicidad, carcinogenicidad.
 
+    |  Compuesto  | Predicted LD50 (mg/kg) | Clase de toxicidad | Hepatotoxicidad | Mutagenicidad | Carcinogenicidad |
+    |:-----------:|:----------------------:|:------------------:|:---------------:|:-------------:|:----------------:|
+    |   Aspirin   |          250           |         3          |  Inactivo 0.51  | Inactivo 0.97 |  Inactivo 0.86   |
+    | Paracetamol |          338           |         4          |   Activo 0.74   | Inactivo 0.90 |  Inactivo 0.51   |
+    |  Caffeine   |          1190          |         4          |   Activo 0.69   | Inactivo 0.97 |  Inactivo 0.97   |
+    | Doxorubicin |          205           |         3          |  Inactivo 0.86  |  Activo 0.98  |  Inactivo 0.90   |
+    | Paclitaxel  |          134           |         3          |  Inactivo 0.63  | Inactivo 0.85 |  Inactivo 0.61   |
+    | Vincristine |           68           |         2          |  Inactivo 0.80  | Inactivo 0.95 |  Inactivo 0.55   |
+    |  Irofulven  |          1000          |         4          |  Inactivo 0.74  |  Activo 0.69  |  Inactivo 0.55   |
+    | Trabectedin |          853           |         4          |  Inactivo 0.81  |  Activo 0.88  |  Inactivo 0.62   |
+
     ¿Cuál de las moléculas seleccionadas muestra menor toxicidad según ProTox-II?
+    La cafeína sería la molécula con menor toxicidad dado que presenta el LD50 más alto, clase de toxicidad 4 e inactividad de hepatogenicidad, mutagenicidad y carcinogenicidad. De las moléculas investigadas se podría decir que la molécula con menor toxicidad es el irofulven.
 
 5. Construir una ficha técnica de cada compuesto que considere las respuestas a las siguientes preguntas: ¿Qué compuestos cumplen mejor con los filtros de Lipinski y Veber? ¿Aparecieron moléculas con alertas PAINS? ¿Cuál es su toxicidad?
+
+    |  Compuesto  | Cumplimiento Lipinski | Violaciones de Lipinski | Cumplimiento Veber | Alertas PAINS |   Toxicidad   |
+    |:-----------:|:---------------------:|:-----------------------:|:------------------:|:-------------:|:-------------:|
+    |   Aspirin   |          Sí           |            0            |         Sí         |       0       |     Baja      |
+    | Paracetamol |          Sí           |            0            |         Sí         |       0       |     Baja      |
+    |  Caffeine   |          Sí           |            0            |         Sí         |       0       |     Baja      |
+    | Doxorubicin |          205          |            3            |   Inactivo 0.86    |  Activo 0.98  | Inactivo 0.90 |
+    | Paclitaxel  |          134          |            3            |   Inactivo 0.63    | Inactivo 0.85 | Inactivo 0.61 |
+    | Vincristine |          68           |            2            |   Inactivo 0.80    | Inactivo 0.95 | Inactivo 0.55 |
+    |  Irofulven  |         1000          |            4            |   Inactivo 0.74    |  Activo 0.69  | Inactivo 0.55 |
+    | Trabectedin |          853          |            4            |   Inactivo 0.81    |  Activo 0.88  | Inactivo 0.62 |
