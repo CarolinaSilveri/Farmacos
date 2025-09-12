@@ -70,7 +70,7 @@ Además, se utilizan filtros de “drug-likeness”, como las reglas de Lipinski
 | Irofulven   | CC1=C(C2=C(C3(CC3)[C@@](C(=O)C2=C1)(C)O)C)CO       | 246.306 |  1.666 |  3  |  2  |  57.53 |        1        |          0          |
 | Trabectedina| CC1=CC2=C([C@@H]3[C@@H]4[C@H]5C6=C(C(=C7C(=C6...   | 761.850 |  3.413 | 15  |  4  | 168.72 |        3        |          2          |
 
-```
+
 
 4. Realizar la predicción de toxicidad in silico utilizando ProTox-II (https://tox-new.charite.de/protox_II/). Utilizando los SMILES de moléculas del punto 1.a y 1.b, obtener: 
 
